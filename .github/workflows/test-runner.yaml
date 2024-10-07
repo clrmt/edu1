@@ -1,0 +1,19 @@
+name: Test Self-Hosted Runner
+
+on: [push]
+
+jobs:
+  test-runner:
+    runs-on: self-hosted
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+        
+      - name: Print working directory
+        run: pwd
+        
+      - name: Display files in repository
+        run: ls -la
+
+      - name: Say Hello
+        run: echo "Hello from self-hosted runner!"
